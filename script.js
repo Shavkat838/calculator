@@ -46,7 +46,7 @@ function backspace(){
 
 function daraja(){
     let dd=inp.value;
-    if(!inp.value.includes('.')&&!inp.value.includes('+')&&!inp.value.includes('-')&&!inp.value.includes('*')&&!inp.value.includes('/')){
+    if(!inp.value.includes('+')&&!inp.value.includes('-')&&!inp.value.includes('*')&&!inp.value.includes('/')){
          inp.value = parseInt(inp.value) * parseInt(inp.value);
     }
     
