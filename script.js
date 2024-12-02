@@ -47,6 +47,7 @@ function backspace(){
 function daraja(){
     if(!inp.value.includes('+')&&!inp.value.includes('-')&&!inp.value.includes('*')&&!inp.value.includes('/')){
          inp.value = parseFloat(inp.value) * parseFloat(inp.value);
+         s++;
     }
     
 }
