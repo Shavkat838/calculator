@@ -13,25 +13,22 @@ function aniqla(param){
     ishoraM()
     nolM()
     inp.value += param; 
-    console.log(inp.value)
     ishoraBoshM();
     nuqta2M()
     if(s==1&&1<=param&&param<=9){
         inp.value=param;
         s=0
     }
-else if(s==1&&(param=="*"||param=="+"||param=="-"||param=="/"||param==".")){
+   else if(s==1&&(param=="*"||param=="+"||param=="-"||param=="/"||param==".")){
     s=0;
 }
-
-  
-   
 
 }
 
 function hisobla(){
    s++;
     inp.value=eval(inp.value);
+
 }
 function tozala(){
     inp.value="";
@@ -45,7 +42,7 @@ function backspace(){
 
 
 function daraja(){
-    if(!inp.value.includes('+')&&!inp.value.includes('-')&&!inp.value.includes('*')&&!inp.value.includes('/')){
+    if(!inp.value.includes('+')&&!inp.value.slice(1).includes('-')&&!inp.value.includes('*')&&!inp.value.includes('/')){
          inp.value = parseFloat(inp.value) * parseFloat(inp.value);
          s++;
     }
@@ -76,6 +73,10 @@ function nuqtaM(){
     if(inp.value==""&&soqchi=="."){   // input birinchi yani bo`sh holatida nuqta yozilmasligi uchun 
        inp.value="0"
     }
+    else if(inp.value.at(-1)=="+"||inp.value.at(-1)=="-"||inp.value.at(-1)=="*"||inp.value.at(-1)=="/"){
+      inp.value=inp.value+"0";
+
+    }
     // else if(inp.value.at(-1)=="."&&soqchi=="."){   //ikkita nuqta ketma-ket kelmasligi uchun
     //    inp.value=inp.value.slice(0,-1);   
     // }    
@@ -87,29 +88,25 @@ function ishoraM(){
         (soqchi == "+" ||
           soqchi == "-" ||
           soqchi == "*" ||
-          soqchi == "/" ||
-          soqchi == "." 
+          soqchi == "/" 
           )) ||
       (inp.value.at(-1) == "-" &&
         (soqchi == "+" ||
           soqchi == "-" ||
           soqchi == "*" ||
-          soqchi == "/" ||
-          soqchi == "." 
+          soqchi == "/" 
           )) ||
       (inp.value.at(-1) == "*" &&
         (soqchi == "+" ||
           soqchi == "-" ||
           soqchi == "*" ||
-          soqchi == "/" ||
-          soqchi == "." 
+          soqchi == "/" 
           )) ||
       (inp.value.at(-1) == "/" &&
         (soqchi == "+" ||
           soqchi == "-" ||
           soqchi == "*" ||
-          soqchi == "/" ||
-          soqchi == "." 
+          soqchi == "/" 
           )) ||
       (inp.value.at(-1) == "." &&
         (soqchi == "+" || soqchi == "-" || soqchi == "*" || soqchi == "/"))
@@ -155,7 +152,6 @@ function nuqta2M(){
            
     }
     else if(count!=0&&soqchi=="."){
-        console.log(1)
        count=0;
     }
 }
